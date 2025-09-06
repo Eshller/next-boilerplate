@@ -1,0 +1,31 @@
+# Copy this file to terraform.tfvars and customize the values
+
+# Project Configuration
+project_name = "next-boilerplate"
+aws_region   = "us-east-1"
+
+# Static Site Configuration
+cloudfront_price_class = "PriceClass_100"
+
+# Server-Side Rendering (optional)
+enable_ssr = false
+# If enabling SSR, you need to provide ECR repository URL:
+# ecr_repository_url = "123456789012.dkr.ecr.us-east-1.amazonaws.com/next-boilerplate"
+
+# ECS Configuration (only used if enable_ssr = true)
+ecs_cpu           = 256
+ecs_memory        = 512
+ecs_desired_count = 2
+
+# Custom Domain (optional)
+# domain_name      = "example.com"
+# certificate_arn  = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
+# route53_zone_id  = "Z1234567890123"
+
+# Resource Tagging
+common_tags = {
+  Project     = "next-boilerplate"
+  Environment = "dev"
+  Owner       = "your-name"
+  ManagedBy   = "terraform"
+}
